@@ -37,7 +37,7 @@ def fetch(url):
         return False
 
 def getStateData():
-    stateFile = openFile("computed/state.json", "w+")
+    stateFile = openFile("computed/state.json", "r+")
     stateDataJson = readFile(stateFile)
     closeFile(stateFile)
 
