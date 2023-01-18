@@ -74,7 +74,8 @@ def main():
     inputDataLines = getIpnutData()
 
     print('Loading output file')
-    outputFile = openFile("computed/computed.csv", "a+")
+    outputFile = openFile("computed/computed.csv", "r+")
+    outputFile.seek(0, 2)
 
     running = True
     while running == True:
