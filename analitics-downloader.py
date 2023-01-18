@@ -2,8 +2,8 @@ import json
 import requests
 import time
 
-def openFile(fileName):
-    file = open(fileName, "a+", encoding = "utf-8")
+def openFile(fileName, mode):
+    file = open(fileName, mode, encoding = "utf-8")
     return file
 
 def readFile(file):
@@ -37,7 +37,7 @@ def fetch(url):
         return False
 
 def getStateData():
-    stateFile = openFile("computed/state.json")
+    stateFile = openFile("computed/state.json", "w+")
     stateDataJson = readFile(stateFile)
     closeFile(stateFile)
 
@@ -45,7 +45,7 @@ def getStateData():
 
 
 def getIpnutData():
-    inputDataParsed = openFile("data/parsed-titles-list.txt")
+    inputDataParsed = openFile("data/parsed-titles-list.txt", "r")
     inputDataLines = getLines(inputDataParsed)
     closeFile(inputDataParsed)
 
@@ -74,7 +74,7 @@ def main():
     inputDataLines = getIpnutData()
 
     print('Loading output file')
-    outputFile = openFile("computed/computed.csv")
+    outputFile = openFile("computed/computed.csv", "a+")
 
     running = True
     while running == True:
