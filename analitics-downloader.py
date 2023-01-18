@@ -55,6 +55,9 @@ def getIpnutData():
 def getPageView(data):
     pageView = 0
 
+    if data == False:
+        return "Request error"
+
     if "items" not in data:
         return 0
 
