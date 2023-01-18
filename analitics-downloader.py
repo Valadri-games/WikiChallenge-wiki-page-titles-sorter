@@ -3,7 +3,7 @@ import requests
 import time
 
 def openFile(fileName):
-    file = open(fileName, "r+", encoding = "utf-8")
+    file = open(fileName, "a+", encoding = "utf-8")
     return file
 
 def readFile(file):
